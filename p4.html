@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cut the Cake 🎂</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(200deg,  #18181b,  #dc84b6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+    }
+    .top-icons {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 120px;
+      font-size: 24px;
+      opacity: 0.9;
+    }
+    h1 {
+      color: white;
+    }
+    p1 {
+        color: #ede3e8;
+        font-size: x-small;
+    }
+    .image-button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+.image-button img {
+  width: 300px; /* Adjust size as needed */
+  height: auto;
+}
+.star {
+     position: absolute;
+      font-size: 2rem;
+      color: #ffcc00;
+      animation: floatStar 10s infinite; /* Slower speed */
+      opacity: 0;
+    }
+
+    /* Floating star animation */
+    @keyframes floatStar {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+<body>
+   <script>
+    // Create 50 floating stars
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.textContent = '🎂'; // Star emoji
+      star.style.left = `${Math.random() * 100}vw`;  // Random horizontal position
+      star.style.animationDuration = `${Math.random() * 6 + 10}s`;  // Random slow speed between 10s and 16s
+      star.style.animationDelay = `${Math.random() * 5}s`;  // Random delay
+      document.body.appendChild(star);
+    }
+  </script>
+  <h1>Let's Cut the Cake! 🎂</h1>
+  <p1>(click the cake)</p1>
+  <br></br>
+  <button class="image-button" onclick="window.open('p5.html', '_blank')" >
+  <img src="cake.avif" alt="cakeyyyyyyy" height="300px">
+</button>
+     <!-- Top Emoji Icons -->
+  <div class="top-icons">
+    <div>🤍</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>🎂</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>🎁</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>💜</div>
+  </div>
+</body>
+</html>

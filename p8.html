@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal 💜🖤</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #211e1a, #eb6d6d);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .star {
+     position: absolute;
+      font-size: 2rem;
+      color: #ffcc00;
+      animation: floatStar 10s infinite; /* Slower speed */
+      opacity: 0;
+    }
+
+    /* Floating star animation */
+    @keyframes floatStar {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0.5;
+      }
+    }
+
+        /* Main Heading */
+        .heading {
+            font-size: 36px;
+            color: #201e1e;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            font-size: 50px;
+        }
+
+        /* Card Style */
+        .card {
+            background-color: #f6f4f2;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px white;
+            text-align: center;
+            width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            color: #0d0c0c;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            background-color: #f06666; 
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #eb6d6d;
+        }
+
+        .btn-yes {
+            background-color: #151815;
+        }
+
+        .btn-yes:hover {
+            background-color: #212c22;
+        }
+
+        /* Hidden Message */
+        .message {
+            font-size: 40px;
+            font-weight: bolder;
+            margin-top: 20px;
+            color: #f1e8e8;
+
+            text-align: center;
+        }
+
+        .message span {
+            color: #f6ecf0;
+        }
+
+        .message i {
+            color: #f6f0f3;
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+             background-image: url('https://www.transparenttextures.com/patterns/rocky-wall.png');
+            display: none;
+        }
+         .top-icons {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 120px;
+      font-size: 24px;
+      opacity: 0.9;
+    }
+
+    </style>
+</head>
+<body>
+   <!-- Top Emoji Icons -->
+  <div class="top-icons">
+    <div>🤍</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>🎂</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>🎁</div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div>💜</div>
+  </div>
+
+<script>
+    // Create 50 floating stars
+    for (let i = 0; i < 50; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.textContent = '🖤'; // Star emoji
+      star.style.left = `${Math.random() * 100}vw`;  // Random horizontal position
+      star.style.animationDuration = `${Math.random() * 6 + 10}s`;  // Random slow speed between 10s and 16s
+      star.style.animationDelay = `${Math.random() * 5}s`;  // Random delay
+      document.body.appendChild(star);
+    }
+  </script>
+    <!-- First Card: One Question for You -->
+    <div class="card">
+        <div class="heading">One Question for You... <span class="heart">💖</span></div>
+        <h2>Will you always be mineeeeeeeee💜🦋 forever and ever?🎀</h2>
+        <div class="buttons">
+            <button class="btn btn-yes" onclick="showMessage('yes')">Yes, my love ❤️</button>
+            <button class="btn" onclick="showMessage('no')">Try again with love 😉</button>
+        </div>
+    </div>
+
+    <!-- Hidden Message after Selection -->
+    <div class="message" id="message"></div>
+
+    <div class="confetti"></div>
+
+    <script>
+        // Show message and confetti when 'Yes' button is clicked
+        function showMessage(response) {
+            let messageElement = document.getElementById('message');
+            if (response === 'yes') {
+                messageElement.innerHTML = 'You just made me the happiest person alive! ❤️😅 <br> I love you toooo janaaaaaaaaaaaaaab 🎀✨';
+                document.querySelector('.confetti').style.display = 'block';
+                confettiEffect();
+            } else {
+                messageElement.innerHTML = 'How Dare You to Say Me NOOOOO😠😠';
+            }
+        }
+
+        // Confetti Effect (for 'Yes' response)
+        function confettiEffect() {
+            const confetti = document.querySelector('.confetti');
+            const numberOfConfetti = 100;
+            for (let i = 0; i < numberOfConfetti; i++) {
+                const confettiElement = document.createElement('div');
+                confettiElement.style.position = 'absolute';
+                confettiElement.style.width = '10px';
+                confettiElement.style.height = '10px';
+                confettiElement.style.backgroundColor = '#eb6d6d';
+                confettiElement.style.borderRadius = '150%';
+                confettiElement.style.top = Math.random() * 100 + '%';
+                confettiElement.style.left = Math.random() * 100 + '%';
+                confettiElement.style.animation = `confetti 5s infinite ease-in-out`;
+                confetti.appendChild(confettiElement);
+            }
+        }
+    </script>
+</body>
+</html>
